@@ -1,17 +1,21 @@
-from requests import get  # Importing the 'get' function from the 'requests' module
+from csv import \
+    writer as \
+    csv_writer  # Importing the 'writer' function from the 'csv' module and aliasing it as 'csv_writer'
+from pathlib import \
+    Path  # Importing the 'Path' class from the 'pathlib' module
 from time import sleep  # Importing the 'sleep' function from the 'time' module
-from csv import (
-    writer as csv_writer,
-)  # Importing the 'writer' function from the 'csv' module and aliasing it as 'csv_writer'
-from urllib.parse import (
-    unquote,
-)  # Importing the 'unquote' function from the 'urllib.parse' module
-from pathlib import Path  # Importing the 'Path' class from the 'pathlib' module
+from urllib.parse import \
+    unquote  # Importing the 'unquote' function from the 'urllib.parse' module
+
+from requests import \
+    get  # Importing the 'get' function from the 'requests' module
 
 token = get("https://opentdb.com/api_token.php?command=request").json()[
     "token"
 ]  # Sending a GET request to obtain an API token from a URL and extracting the token value from the JSON response
-num = 9  # Assigning the value 9 to the variable 'num' (the first trivia category number)
+num = (
+    9  # Assigning the value 9 to the variable 'num' (the first trivia category number)
+)
 count = 50  # Assigning the value 50 to the variable 'count'
 questions_written = 0  # Assigning the value 0 to the variable 'questions_written'
 
